@@ -1,0 +1,42 @@
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #fc4a1a;
+    background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);
+    background: linear-gradient(to right, #f7b733, #fc4a1a)
+}
+
+.card {
+    border-radius: 10px;
+    padding: 35px 26px;
+    width: 400px;
+    position: relative;
+    top: -15vh;
+}
+
+.abt {
+    font-size: 14px
+}
+
+.proceed button {
+    height: 50px;
+    font-size: 15px;
+    width: 70%;
+}
+
+label {
+    display: inline-block;
+    font-size: 14px;
+    font-family:monospace;
+    width: 40%;
+    text-align: right;
+  }
+
+.input-div {
+    margin-top : 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

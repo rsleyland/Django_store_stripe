@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+{% block head %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">{% endblock %}
+
+{% block content %}
+
+    </div>
+  
+    <form id="main" action="{% url 'account:login' %}" method="post">
+    {% csrf_token %}
+    <div class="card">
+        <div class="text-center">
+            <h3>Login</h3> 
+            <span class="abt">Dont have an account? <a href="{% url 'account:account_register' %}">Register</a></span>
+        </div>
+        {% if form.errors %}
+        <div class="alert alert-primary text-center" role="alert">
+            Error: Username or Password not correct!
+            <span class="abt"><a href="{% url 'account:pwdreset' %}">Forgot your password?</a></span>
+        </div>
+        {% endif %}
+        <div class="form mt-3">
+            <div class="input-div">
+                <label for="">{{form.username.label}}</label>
+                {{form.username}}
+            </div>
+            <div class="input-div">
+            <label for="">{{form.password.label}}</label>
+            {{form.password}}
+            </div>
+        </div>
+        <div class="mt-4 proceed d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary btn-block d-flex flex-row justify-content-center align-items-center">
+            <div class="text-right"> <span>Login</span> </div>
+            </button>
+        </div>
+    </div>
+    </form>
+
+
+{% endblock %}
